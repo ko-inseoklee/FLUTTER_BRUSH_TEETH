@@ -1,4 +1,5 @@
 import 'package:brushing_teeth/friends/Friends.dart';
+import 'package:brushing_teeth/friends/FriendAvatar.dart';
 import 'package:brushing_teeth/report/Report.dart';
 import 'package:brushing_teeth/teeth/Teeth.dart';
 import 'package:flutter/cupertino.dart';

@@ -106,9 +106,31 @@ class _HomeTabState extends State<HomeTab> {
           ),
           Container(
             margin: EdgeInsets.only(top: 34.0),
-            child: Stack(
+            height: 44,
+            child: Column(
               children: [
-                //TODO: 말풍선 구현.
+                Container(
+                  margin: EdgeInsets.only(left: 143),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 38,
+                        height: 17,
+
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Color(0xffFF8C5B),
+                            borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text('위험',style: TextStyle(fontSize: 9,height: 1.5,fontWeight: FontWeight.w400, color: Color(0xffFFFFFF)),),
+                      ),
+                      Container(
+                        padding: EdgeInsets.zero,
+                        child: Icon(CupertinoIcons.arrowtriangle_down_fill,size: 8,color: Color(0xffFF8C5B),),
+                      )
+                    ],
+                  ),
+                ),
                 Container(
                   child: Row(
                     children: [
@@ -153,7 +175,7 @@ class _HomeTabState extends State<HomeTab> {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
