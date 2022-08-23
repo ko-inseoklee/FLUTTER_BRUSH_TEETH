@@ -39,7 +39,7 @@ class FriendListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 348,
-      height: rank <=3 ? 65 : 55 ,
+      height: user == MyProfile? 57 : rank <=3 ? 65 : 55 ,
       margin: EdgeInsets.only(bottom: 5),
       decoration: BoxDecoration(
         color: rank == 1? Color(0xff6377F9) :
@@ -75,14 +75,14 @@ class FriendListTile extends StatelessWidget {
           ),
           Container(
             width: 133, height: 42,
-            margin: EdgeInsets.only(top:rank <=3 ? 13 : 8,left: 13),
+            margin: EdgeInsets.only(top:rank <=3 ? 13 : 8,left: 13, bottom: rank <= 3? 10: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 82,
-                  height: 20,
-                  child: Text(user.name, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,height: 1.2, color: rank <= 3? Color(0xffFFFFFF) : Color(0xff7C7C7E)),),
+                  height: user == MyProfile? 18: 20,
+                  child: Text(user.name, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,height: 1.2, color: user == MyProfile? Color(0xff465BEA) : rank <= 3? Color(0xffFFFFFF) : Color(0xff7C7C7E)),),
                 ),
                 Container(
                   width: 133,
@@ -94,16 +94,16 @@ class FriendListTile extends StatelessWidget {
             ),
           ),
           Container(
-            width: 51, height: 20,
-            margin: EdgeInsets.only(left: 46),
+            width: 51, height: user == MyProfile? 22 : 20,
+            margin: EdgeInsets.only(left: 46, top: 18,bottom: 17),
             child: Text.rich(
               TextSpan(
                 text: "${user.score}",
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w400, height: 0.8, color: rank <=3? Color(0xffFFFFFF) : Color(0xff7C7C7E)),
+                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w400, height: 0.9, color: rank <=3? Color(0xffFFFFFF) : Color(0xff7C7C7E)),
                 children: [
                   TextSpan(
                       text: "점",
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, height: 1.2),
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, height: 1.1),
                   )
                 ]
               )

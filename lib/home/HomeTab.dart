@@ -29,7 +29,7 @@ class _HomeTabState extends State<HomeTab> {
                     children: [
                       Text('${MyProfile.name}님,',
                         style: TextStyle(
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             fontSize: 18.0,
                             height: 1.5,
                             color: Color(0xff3F3F3F)
@@ -39,7 +39,7 @@ class _HomeTabState extends State<HomeTab> {
                         TextSpan(
                             text: '현재 구강이 ',
                             style: TextStyle(
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w900,
                                 fontSize: 18.0,
                                 height: 1.5,
                                 color: Color(0xff3F3F3F)
@@ -48,7 +48,7 @@ class _HomeTabState extends State<HomeTab> {
                               TextSpan(
                                 text: '위험',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.w900,
                                     fontSize: 18.0,
                                     height: 1.5,
                                     color: Color(0xffFF8C5B)
@@ -57,7 +57,7 @@ class _HomeTabState extends State<HomeTab> {
                               TextSpan(
                                 text: '한 상태입니다',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.w900,
                                     fontSize: 18.0,
                                     height: 1.5,
                                     color: Color(0xff3F3F3F)
@@ -110,25 +110,35 @@ class _HomeTabState extends State<HomeTab> {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 143),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 38,
-                        height: 17,
-
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xffFF8C5B),
-                            borderRadius: BorderRadius.circular(15),
+                  height: 26,
+                  width: 350,
+                  child: Stack(
+                      children: [
+                        Positioned(
+                          top: 5,
+                          left: 227,
+                          child: Container(
+                            width: 38,
+                            height: 17,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                color: Color(0xffFF8C5B),
+                                borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Text('위험',style: TextStyle(fontSize: 9,height: 1.5,fontWeight: FontWeight.w400, color: Color(0xffFFFFFF)),),
+                          ),
                         ),
-                        child: Text('위험',style: TextStyle(fontSize: 9,height: 1.5,fontWeight: FontWeight.w400, color: Color(0xffFFFFFF)),),
-                      ),
-                      Container(
-                        padding: EdgeInsets.zero,
-                        child: Icon(CupertinoIcons.arrowtriangle_down_fill,size: 8,color: Color(0xffFF8C5B),),
-                      )
-                    ],
+                        Positioned(
+                          top: 20,
+                          left: 242,
+                          child: Container(
+                            width: 9,
+                            height: 9,
+                            padding: EdgeInsets.zero,
+                            child: Icon(CupertinoIcons.arrowtriangle_down_fill,size: 8,color: Color(0xffFF8C5B),),
+                          ),
+                        )
+                      ],
                   ),
                 ),
                 Container(
@@ -147,7 +157,8 @@ class _HomeTabState extends State<HomeTab> {
                         child: Text('마지막 양치 이후',
                           style: TextStyle(
                               color: Color(0xffFFFFFF),
-                              fontSize: 11.0
+                              fontSize: 11.0,
+                            height: 1.3
                           ),
                         ),
                       ),
@@ -323,13 +334,14 @@ class _HomeTabState extends State<HomeTab> {
                           color: Color(0xffFFE9E0),
                           borderRadius: BorderRadius.circular(15)
                         ),
-                        margin: EdgeInsets.only(top: 7),
+                        margin: EdgeInsets.only(top: 7, left: 17),
                         alignment: Alignment.center,
                         child: Text("아랫니를 더 꼼꼼히!"
                           ,style: TextStyle(
                               color: Color(0xffFF8C5B),
                               fontSize: 11.0,
-                              fontWeight: FontWeight.w500
+                              fontWeight: FontWeight.w500,
+                            height: 1.1
                           ),
                         ),
                       )
