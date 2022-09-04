@@ -302,6 +302,7 @@ class _HomeTabState extends State<HomeTab> {
                 ),
                 Container(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         height: 13,
@@ -334,7 +335,7 @@ class _HomeTabState extends State<HomeTab> {
                           color: Color(0xffFFE9E0),
                           borderRadius: BorderRadius.circular(15)
                         ),
-                        margin: EdgeInsets.only(top: 7, left: 17),
+                        margin: EdgeInsets.only(top: 7, left: 16),
                         alignment: Alignment.center,
                         child: Text("아랫니를 더 꼼꼼히!"
                           ,style: TextStyle(

@@ -7,12 +7,13 @@ class DottedBorder extends CustomPainter {
   //number of stories
   final int numberOfStories;
   final int score;
+  final bool isNotFriend;
   //length of the space arc (empty one)
   final int spaceLength;
   //start of the arc painting in degree(0-360)
   double startOfArcInDegree = 270;
 
-  DottedBorder({required this.score, required this.numberOfStories, this.spaceLength = 10});
+  DottedBorder({required this.score, required this.numberOfStories, this.spaceLength = 10,required this.isNotFriend});
 
   //drawArc deals with rads, easier for me to use degrees
   //so this takes a degree and change it to rad
@@ -56,7 +57,9 @@ class DottedBorder extends CustomPainter {
           false,
           Paint()
           //here you can compare your SEEN story index with the arc index to make it grey
-            ..color = i <= score? Color(0xff263FE9) : Color(0xffC0C8FC)
+            ..color = isNotFriend? Color(0xffC0C8FC)
+                : i <= score? Color(0xff263FE9)
+                : Color(0xffC0C8FC)
             ..strokeWidth =2.0
             ..style = PaintingStyle.stroke
 
@@ -72,7 +75,8 @@ class DottedBorder extends CustomPainter {
 
 class FriendAvatarCard extends StatelessWidget {
   final UserModel user;
-  const FriendAvatarCard({Key? key,required this.user,}) : super(key: key);
+  final bool isNotFriend;
+  const FriendAvatarCard({Key? key,required this.user, this.isNotFriend = false}) : super(key: key);
 
 
   @override
@@ -88,7 +92,7 @@ class FriendAvatarCard extends StatelessWidget {
               Container(
                 width: 53, height: 53,
                 child: CustomPaint(
-                  painter: DottedBorder(numberOfStories: 100, spaceLength: 0, score: user.score),
+                  painter: DottedBorder(numberOfStories: 100, spaceLength: 0, score: user.score, isNotFriend: this.isNotFriend),
                 ),),
               Container(
                 width: 51,
@@ -105,7 +109,7 @@ class FriendAvatarCard extends StatelessWidget {
             width: 52,
             alignment: Alignment.center,
             margin: EdgeInsets.only(top: 5),
-            child: Text(user.name,
+            child: Text( isNotFriend? "" : user.name,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 10,

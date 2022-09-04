@@ -80,6 +80,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: _pages[_currentPageIndex],
         bottomNavigationBar: Container(
           padding: EdgeInsets.only(left: 18),
