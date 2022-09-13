@@ -22,8 +22,75 @@ class _ReportState extends State<Report> {
           padding: EdgeInsets.zero,
           children: [
             Container(
-              height: 453,
-              child: Image.asset('images/reports/graph.png'),
+              height: 397,
+              width: 390,
+              color: Color(0xffE1E5FF),
+              child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 16, left:24), width: 114, height: 23, alignment: Alignment.centerLeft,
+                          child: Text('양치점수 평균',style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff434343)),),
+                        ),
+                        Container(
+                          width: 140,height: 45, margin: EdgeInsets.only(top: 2, left: 19), alignment: Alignment.centerLeft,
+                          child:RichText(
+                            text: TextSpan(
+                              text: "53",
+                              style: TextStyle(fontSize: 45, color: Color(0xff263FE9), fontWeight: FontWeight.w700),
+                              children: [
+                                TextSpan(text: "점", style: TextStyle(fontSize: 14, color: Color(0xff646464), fontWeight: FontWeight.w400),
+                                )
+                              ]
+                            ),
+                          )
+                        ),
+                        Container(
+                          width: 174,height: 23, margin: EdgeInsets.only(top: 8, left: 24),
+                          child: Text('2022년 10월 8일 - 10월 24일', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Color(0xff646464))),
+                        ),
+                        Container(
+                          width: 343, height: 280, margin: EdgeInsets.only(left: 10),
+                            child: SingleChildScrollView(
+                                padding: EdgeInsets.zero, reverse: true,
+                                scrollDirection: Axis.horizontal,
+                                child: Image.asset('images/reports/graph.png')
+                            ),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          width: 20, height: 22, margin: EdgeInsets.only(top: 115),
+                          child: Text('100', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff7B89EA))),
+                        ),
+                        Container(
+                          width: 20, height: 22, margin: EdgeInsets.only(top: 38),
+                          child: Text('75', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff7B89EA))),
+                        ),
+                        Container(
+                          width: 20, height: 22, margin: EdgeInsets.only(top: 38),
+                          child: Text('50', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff7B89EA))),
+                        ),
+                        Container(
+                          width: 20, height: 22, margin: EdgeInsets.only(top: 38),
+                          child: Text('25', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff7B89EA))),
+                        ),
+                        Container(
+                          width: 20, height: 22, margin: EdgeInsets.only(top: 38),
+                          child: Text('0', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: Color(0xff7B89EA))),
+                        ),
+                      ],
+                    )
+                  ]
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 34,left: 24), width: 133, height: 25,
+              child: Text('양치 하이라이트', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xff434343)),),
             ),
             Container(
               width: 354,
