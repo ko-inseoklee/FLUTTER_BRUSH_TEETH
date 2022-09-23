@@ -14,6 +14,8 @@ class _ReportState extends State<Report> {
   bool isGraph = true;
   bool isPictureOpened = false;
 
+
+
   Widget GraphTab () {
     return Container(
         margin: EdgeInsets.only(top: 19),
@@ -875,7 +877,7 @@ class _ReportState extends State<Report> {
                       child: Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(bottom:22),
+                            margin: EdgeInsets.only(bottom:15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -902,7 +904,7 @@ class _ReportState extends State<Report> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(bottom:22),
+                            margin: EdgeInsets.only(bottom:15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
