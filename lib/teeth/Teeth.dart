@@ -1,8 +1,18 @@
 import 'package:brushing_teeth/component/MyAppBar.dart';
+import 'package:brushing_teeth/teeth/TeethCard.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class Teeth extends StatelessWidget {
+class Teeth extends StatefulWidget {
+
   const Teeth({Key? key}) : super(key: key);
+
+  @override
+  _TeethState createState() => _TeethState();
+}
+
+class _TeethState extends State<Teeth> {
+  bool isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +73,53 @@ class Teeth extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Image.asset('images/teeth/teethFrame.png'),
-                Image.asset('images/teeth/direction.png')
+                Image.asset(isClicked? 'images/teeth/teethFrameAfter.png':'images/teeth/teethFrame.png'),
+                // Image.asset('images/teeth/direction.png'),
+                Positioned(
+                  top: 80,
+                    child: Container(
+                      width: 55, height: 40, alignment: Alignment.center,
+                      child: Text('위', style: TextStyle(color: Color(0xff8B8B8B), fontSize: 13, fontWeight: FontWeight.w400),),
+                  )
+                ),
+                Positioned(
+                    left: 75,
+                    child: Container(
+                      width: 55, height: 40, alignment: Alignment.center,
+                      child: Text('왼쪽', style: TextStyle(color: Color(0xff8B8B8B), fontSize: 13, fontWeight: FontWeight.w400),),
+                    )
+                ),
+                Positioned(
+                    bottom: 66,
+                    child: Container(
+                      width: 55, height: 40, alignment: Alignment.topCenter,
+                      child: Text('아래', style: TextStyle(color: Color(0xff8B8B8B), fontSize: 13, fontWeight: FontWeight.w400),),
+                    )
+                ),
+                Positioned(
+                    right: 70,
+                    child: Container(
+                      width: 55, height: 40, alignment: Alignment.center,
+                      child: Text('오른쪽', style: TextStyle(color: Color(0xff8B8B8B), fontSize: 13, fontWeight: FontWeight.w400),),
+                    )
+                ),
+                Positioned(
+                    left: 30, bottom: 189,
+                    child: Container(
+                      width: 44, height: 41, alignment: Alignment.center,
+                      child: FlatButton(padding: EdgeInsets.zero, onPressed: () {
+                        setState(() {
+                          isClicked = !isClicked;
+                        });
+                      }, child: Text(''),),
+                    )
+                ),
               ],
             ),
           ),
+          isClicked?
+          TeethCard()
+              :
           Container(
             width: 166, height: 31,
             margin: EdgeInsets.only(top: 36,left: 106),
