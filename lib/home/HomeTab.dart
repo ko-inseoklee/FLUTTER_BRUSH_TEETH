@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:brushing_teeth/friends/DummyUserData.dart';
 import 'package:brushing_teeth/home/BrushCountCard.dart';
+import 'package:brushing_teeth/home/HomeDetail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -624,7 +625,14 @@ class _HomeTabState extends State<HomeTab> {
                 Container(
                   margin: EdgeInsets.only(left: 22),
                   child: FlatButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      isClean?
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return HomeDetailPage();
+                      }))
+                          :
+                          print("not clean");
+                    },
                     padding: EdgeInsets.zero,
                     child: Text("더보기"
                       ,style: TextStyle(
