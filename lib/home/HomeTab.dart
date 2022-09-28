@@ -26,6 +26,7 @@ class _HomeTabState extends State<HomeTab> {
 
   //to check if sheet is open
   bool isSheetOpen = false;
+  bool isSheetPop = false;
   //to access setState of sheet
   late Function sheetSetState;
 
@@ -425,11 +426,15 @@ class _HomeTabState extends State<HomeTab> {
                               sheetSetState = SheetSetState;
                               return GestureDetector(
                                 onTap: () {
-                                  timer!.cancel();
                                   setState(() {
-                                    isClean = true;
+                                    if(isSheetPop){
+                                      isClean= true;
+                                      Navigator.pop(context);
+                                    } else{
+                                      isSheetPop = true;
+                                      timer!.cancel();
+                                    }
                                   });
-                                  Navigator.pop(context);
                                 },
                                 child: Container(
                                   height: 324,

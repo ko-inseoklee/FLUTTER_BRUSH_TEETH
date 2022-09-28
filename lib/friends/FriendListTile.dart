@@ -52,9 +52,9 @@ class FriendListTile extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 20,
+            width: 24,
             height: 34,
-            margin: EdgeInsets.only(top: 16,left: 21),
+            margin: EdgeInsets.only(top: 16,left: 17), alignment: Alignment.topCenter,
             child: Text(rank.toString(), style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: rank <= 3? Color(0xffFFFFFF): Color(0xff7C7C7E),height: 1),),
           ),
           Container(
